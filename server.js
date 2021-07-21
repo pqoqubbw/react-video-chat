@@ -11,12 +11,12 @@ const io = require("socket.io")(server, {
 });
 
 app.use(cors());
-app.use(express.static(path.join(__dirname, "build")))
+app.use(express.static(path.join(__dirname, "build")));
 
 const PORT = process.env.PORT || 5000;
 
 app.get("/", (req, res) => {
-  res.sendFile(path.join(__dirname, "build", "index.html"))
+  res.sendFile(path.join(__dirname, "build", "index.html"));
 });
 
 io.on("connection", (socket) => {
